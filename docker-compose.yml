@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  etl:
+      container_name: google_trends_service
+      command: ["python", "etl.py"]
+      image: google_trends/etl:latest
+      build: 
+        context: ./
+volumes:
+  db_data:
